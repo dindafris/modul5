@@ -1,0 +1,112 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* css index.php */
+
+#tbl{
+    position: absolute;
+    border-collapse: collapse;
+    text-align: center;
+    width: 70%;
+    border-top-left-radius: 4px;
+    top: 20%;
+    left: 16%;
+}
+
+th{
+    font-size: 20px;
+    background-color: #51557E;
+    color: #D6D5A8;
+    padding: 10px;
+}
+
+td{
+    font-size: 18px;
+    background-color: #FCF8E8;
+    padding: 6px;
+}
+
+.tambah{
+    position: absolute;
+    background-color: rgb(92, 92, 199);
+    color: white;
+    cursor: pointer;
+    font-size: 26px;
+    padding: 4px 11px;
+    border: none;
+    border-radius: 6px;
+    top: 14%;
+    right: 14%;
+}
+
+.tambah:hover{
+    background-color: rgb(68, 68, 173);
+}
+
+.searchbar {
+    position: absolute;
+    font-size: 26px;
+    padding: 4px 11px;
+    border: none;
+    top: 12%;
+    left: 15%;
+  }
+
+  input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border-radius: 6px;
+    background-color: #FCF8E8;
+    border-color:#51557E;;
+  }
+
+.submit{
+    padding: 6px 8px;
+    font-size: 20px;
+    background-color: rgb(92, 92, 199);
+    border-radius: 4px;
+    border: none;
+    color: white;
+}
+
+.submit{
+    background-color: rgb(68, 68, 173);
+}
+
+.btn{
+    border: none;
+    padding: 6px 9px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.detail{
+    background-color: rgb(20, 155, 20);
+    color: white;
+}
+
+.detail:hover{
+    background-color: rgb(22, 132, 22);
+}
+
+.edit{
+    background-color: rgb(196, 93, 29);
+    color: white;
+}
+
+.edit:hover{
+    background-color: rgb(164, 73, 17);
+}
+
+.delete{
+    background-color: rgb(193, 31, 31);
+    color: white;
+}
+
+.delete:hover{
+    background-color: rgb(154, 22, 22);
+}
+
+
