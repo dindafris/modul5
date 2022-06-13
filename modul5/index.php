@@ -25,11 +25,14 @@ if(isset($_POST["cari"]) ){
 
 </head>
 <body>
+    <?php if( isset($_POST["cari"]) ) : ?>
+        <a href="index.php"><button class="back"><i class="fa fa-arrow-left-long"></i></button></a>
+    <?php endif; ?>
     <a href="tambah.php"><button class="tambah"><i class="fa-reguler fa-plus"></i></button></a>
     <div class="searchbar">
 
     <form action="" method="post">
-      <input type="text" name="keyword" placeholder="Cari" name="search">
+      <input type="text" name="keyword" id="keyword" placeholder="Cari" name="search">
       <button type="text" name="cari" class="submit"><i class="fa fa-magnifying-glass"></i></button>
     </form>
 
@@ -48,28 +51,22 @@ if(isset($_POST["cari"]) ){
     <tbody>
         <tr>
         </tr>
-        <?php
-        $conn= mysqli_connect("localhost", "root", "", "tugasphpcrud");
-        $no = 1;
-        $query = mysqli_query($conn, 'SELECT * FROM mahasiswa');
-        while ($data = mysqli_fetch_array($query)) {
-        ?>
+        <?php $no = 1; ?>
+        <?php foreach ($mahasiswa as $row) : ?>
             <tr>
                 <td><?php echo $no++ ?></td>
-                <td><?php echo $data['nama'] ?></td>
-                <td><?php echo $data['npm'] ?></td>
-                <td><?php echo $data['fakultas'] ?></td>
-                <td><?php echo $data['jurusan'] ?></td>
+                <td><?php echo $row['nama'] ?></td>
+                <td><?php echo $row['npm'] ?></td>
+                <td><?php echo $row['fakultas'] ?></td>
+                <td><?php echo $row['jurusan'] ?></td>
                 <td class="aksi">
-                    <a href="detail.php?id=<?php echo $data['id'] ?>"><button class="btn detail"><i class="fa fa-bars"></i></button></a>
-                    <a href="ubah.php?id=<?= $data["id"]; ?>?"></a>
-                    <a href="ubah.php?id=<?php echo $data['id'] ?>"><button class="btn edit"><i class="fa fa-pencil"></i></button></a>
-                    <a href="hapus.php?id=<?php echo $data['id'] ?>"><button class="btn delete"><i class="fa-regular fa-trash-can"></i></button></a>
-        </td>
+                    <a href="detail.php?id=<?php echo $row['id'] ?>"><button class="btn detail"><i class="fa fa-bars"></i></button></a>
+                    <a href="ubah.php?id=<?= $row["id"]; ?>?"></a>
+                    <a href="ubah.php?id=<?php echo $row['id'] ?>"><button class="btn edit"><i class="fa fa-pencil"></i></button></a>
+                    <a href="hapus.php?id=<?php echo $row['id'] ?>"><button class="btn delete"><i class="fa-regular fa-trash-can"></i></button></a>
+                </td>
         </tr>
-                
-            
-        <?php } ?>
+        <?php endforeach; ?> 
 
 
     </tbody>
